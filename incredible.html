@@ -1,0 +1,183 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Incredible Page</title>
+    <script src="general.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512<-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="fronter">
+    <img src="C:/NETRELOADED CDS/InShot_20230513_161805242_prev_ui.png" class="logo">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <img src="C:\NETRELOADED CDS\NETRELOADED CDS\NETRELOADEDLOGO 1.png" style="width: 40%; height: 40%;" alt="menulogo">
+      <a href="index.html">HOME</a>
+      <a href="trends.html">TRENDS</a>
+      <a href="news.html">NEWS</a>
+      </div>
+  <span style="font-size: 30px; cursor: pointer;" onclick="openNav()">
+      <button>&#9776;MENU</button>
+  </span>
+  <header>
+		<nav>
+			<div class="end-bx">
+				<div class="search">
+					<input type="text" placeholder="Search movies..."><p id="search-result"></p>
+					<div class="search-bx2">
+						<a href="#">
+							<img src="C:\NETRELOADED CDS\korean 1.jpeg" alt="">
+							<div class="content2">
+								<h6>korea</h6>
+								<p>2018</p>
+                </div>
+              </a>
+                      </div>
+                    </div>
+                </nav>
+                </header>
+              </div>
+	<div class="fronter-content">
+            <h1>All Entertainment in One</h1>
+            <h3>Watch, Listen, Read anywhere anytime</h3>
+        </div>
+	<style>
+    .search input[type="text"] {
+       display: flex;
+      width: 600px;
+	  height:50px;
+    }
+  </style>
+    <div class="row">
+        <div class="img-col">
+            <img src="C:/Users/salau/OneDrive/Pictures/davido.jpg">
+        </div>
+        <div class="text-col">
+            <h2>Easy Music Download</h2>
+            <p>Download your favorite music for free</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-col">
+            <h2>Enjoy Nollywood Blockbusters</h2>
+            <p>Watch all trending Nollywood movies</p>
+        </div>
+        <div class="img-col">
+            <img src="C:\NETRELOADED CDS\NETRELOADED CDS\NOLLYWOOD Black-Book.jpg">
+        </div>
+    </div>
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <ul class="accordion">
+            <li>
+                <input type="radio" name="accordion" id="first">
+                <label for="first">About Netreloaded?</label>
+                <div class="content">
+                    <p>Netreloaded is designed for the best entertainment experience you could wish for</p>
+                </div>
+            </li>
+            <li>
+ <input type="radio" name="accordion" id="second">
+                <label for="second">How to download?</label>
+                <div class="content">
+                    <p>Kindly check below your favorite music or movies for a download icon or button</p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="third">
+                <label for="third">Is it free?</label>
+                <div class="content">
+                    <p>Yes, it is free</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <h2>Question? Contact on all social handles</h2>
+        <div class="row">
+            <div class="col">
+                <h2>EASY LINK TO FILES</h2>
+                <a href="#">HOME</a>
+                <a href="#">MUSIC</a>
+                <a href="#">MOVIES</a>
+                <a href="#">NEWS</a>
+                <a href="#">TERMS & CONDITIONS</a>
+            </div>
+        </div>
+    </div>
+    <p class="copyright-txt">
+        Netreloaded
+    </p>
+<script>
+  const search = document.querySelector('.search input');
+  const searchBx2 = document.querySelector('.search-bx2');
+  const movies = [
+    {
+      img: 'C:/Users/salau/Downloads/Burna-Boy-City-Boys-Video-Artwork.jpg',
+      title: 'Burna-Boy-City-Boys-Video-Artwork',
+      year: '2019',
+      url: 'Duplicate.html'
+    },
+    {
+      img: 'C:/Users/salau/OneDrive/Pictures/davido.jpg',
+      title: 'AFROBEATZ',
+      year: '2020',
+      url: 'DUPLICATE.html'
+    },
+    {
+      img: 'C:/NETRELOADED CDS/NETRELOADED CDS/NOLLYWOOD Black-Book.jpg',
+      title: 'BLACKBOOK',
+      year: 'black-book-2023',
+      url: 'black-book.html'
+    }
+  ];
+
+  window.addEventListener('load', () => {
+    movies.forEach(element => {
+      const { img, title, year, url } = element;
+
+      let card = document.createElement('a');
+      card.href = url;
+      card.innerHTML = `
+        <img src="${img}" alt="">
+        <div class="content2">
+          <h6>${title}</h6>
+          <p>${year}</p>
+        </div>
+      `;
+      searchBx2.appendChild(card);
+    });
+  });
+
+  search.addEventListener('keyup', () => {
+    let filter = search.value.toUpperCase();
+    let a = searchBx2.getElementsByTagName('a');
+    for (let i = 0; i < a.length; i++) {
+      let b = a[i].querySelector('.content2');
+      let c = b.querySelector('h6');
+
+      let textValue = c.textContent || c.innerText;
+      if (textValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = '';
+        searchBx2.style.visibility = 'visible';
+        searchBx2.style.opacity = 1;
+      } else {
+        a[i].style.display = 'none';
+      }
+      if (search.value === '') {
+        searchBx2.style.visibility = 'hidden';
+        searchBx2.style.opacity = 0;
+      }
+    }
+  });
+</script>
+	<link rel="stylesheet" type="text/css" href="netflix.css">
+    <link rel="stylesheet" type="text/css" href="general.css">
+    <link rel="stylesheet" type="text/css" href="incredible.css">
+	 <script src="TEXTING.js"></script>
+</body>
+</html>
